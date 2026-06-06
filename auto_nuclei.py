@@ -37,8 +37,9 @@ def main(subdomains):
 		sys.exit(1)
 
 	print(f'[+] Done! You can check results in nuclei_results.txt')
+
 if __name__ == '__main__':
 	if len(sys.argv) != 2:
 		print(f'Usage: python auto_nuclei.py <your_subdomains_file.txt>')
 		sys.exit(1)
-	main(sys.argv[1])
+	main(sys.argv[1]) # a small change
