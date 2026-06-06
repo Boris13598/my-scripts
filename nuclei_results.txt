@@ -1,0 +1,66 @@
+[dns-waf-detect:cloudflare] [dns] [info] tryhackme.com
+[dns-waf-detect:cloudflare] [dns] [info] example.com
+[azure-domain-tenant] [http] [info] https://login.microsoftonline.com:443/tryhackme.com/v2.0/.well-known/openid-configuration ["281d524b-5e8d-4d1c-b5f4-f56c7847d22d"]
+[azure-domain-tenant] [http] [info] https://login.microsoftonline.com:443/deepseek.com/v2.0/.well-known/openid-configuration ["03ec941e-45ca-40d9-98e1-17c7cdc58c0c"]
+[waf-detect:cloudfront] [http] [info] https://deepseek.com
+[deprecated-tls:tls_1.1] [ssl] [info] google.com:443 ["tls11"]
+[deprecated-tls:tls_1.0] [ssl] [info] google.com:443 ["tls10"]
+[weak-cipher-suites:tls-1.0] [ssl] [low] google.com:443 ["[tls10 TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA]"]
+[weak-cipher-suites:tls-1.1] [ssl] [low] google.com:443 ["[tls11 TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA]"]
+[tls-version] [ssl] [info] deepseek.com:443 ["tls12"]
+[tls-version] [ssl] [info] deepseek.com:443 ["tls13"]
+[assetlinks-detect] [http] [info] https://google.com/.well-known/assetlinks.json
+[tls-version] [ssl] [info] google.com:443 ["tls10"]
+[tls-version] [ssl] [info] google.com:443 ["tls11"]
+[tls-version] [ssl] [info] google.com:443 ["tls12"]
+[tls-version] [ssl] [info] google.com:443 ["tls13"]
+[tls-version] [ssl] [info] tryhackme.com:443 ["tls12"]
+[tls-version] [ssl] [info] tryhackme.com:443 ["tls13"]
+[missing-sri] [http] [info] https://www.google.com/ ["https://www.gstatic.com/og/_/js/k=og.asy.en_US.jfVkJuTs80Y.2019.O/rt=j/m=_ac,_awd,ada,lldp,qads,abld/exm=/d=1/ed=1/rs=AA2YrTtgSW9RJdXIYWwcYAK_1YQaAJwqZA","https://www.gstatic.com/og/_/ss/k=og.asy.sfE-LILTe5I.L.W.O/m=ll_tdm,adcgm3,ll_fw,abld/excm=/d=1/ed=1/ct=zgms/rs=AA2YrTuKdE2V0SygxR5g6QHmOyBF61oZMA"]
+[apple-app-site-association] [http] [info] https://google.com/apple-app-site-association ["EQHXZ8M8AV.com.google.GoogleMobile","4ANB9W7R3P.com.google.GoogleMobile.fishfood","4ANB9W7R3P.com.google.GoogleMobile.dogfood","EQHXZ8M8AV.com.google.Maps","","EQHXZ8M8AV.com.google.Stella.dev","4ANB9W7R3P.com.google.keyboard.enterprise","EQHXZ8M8AV.com.google.LightCycle.dev","EQHXZ8M8AV.com.google.GoogleMobile.dev","EQHXZ8M8AV.com.google.GoogleDigitalEditions.dev","4ANB9W7R3P.com.google.ShoppingExpress.enterprise","4ANB9W7R3P.com.google.SendKitDemo.enterprise","EQHXZ8M8AV.com.google.keyboard.dev","EQHXZ8M8AV.com.google.ShoppingExpress.dev","EQHXZ8M8AV.com.google.Dzimuth","4ANB9W7R3P.com.google.LightCycle.fishfood","4ANB9W7R3P.com.google.LightCycle.enterprise","4ANB9W7R3P.com.google.GoogleMobile.rc","4ANB9W7R3P.com.google.GoogleMobile.qadogfood","4ANB9W7R3P.com.google.Stella","4ANB9W7R3P.com.google.Stella.dev","4ANB9W7R3P.com.google.GoogleDigitalEditions.daily","4ANB9W7R3P.com.google.GoogleDigitalEditions.enterprise","4ANB9W7R3P.com.google.GoogleDigitalEditions.rc","EQHXZ8M8AV.com.google.GoogleDigitalEditions","EQHXZ8M8AV.com.google.SendKitDemo.dev","4ANB9W7R3P.com.google.photos.enterprise","4ANB9W7R3P.com.google.Rzimuth","EQHXZ8M8AV.com.google.Stella","EQHXZ8M8AV.com.google.photos","EQHXZ8M8AV.com.google.photos.dev","4ANB9W7R3P.com.google.photos.fishfood","4ANB9W7R3P.com.google.Azimuth","EQHXZ8M8AV.com.google.calendar","EQHXZ8M8AV.com.google.ShoppingExpress","4ANB9W7R3P.com.google.ShoppingExpress.nightly","EQHXZ8M8AV.com.google.keyboard","4ANB9W7R3P.com.google.Czimuth","EQHXZ8M8AV.com.google.LightCycle"]
+[security-txt] [http] [info] https://www.google.com/.well-known/security.txt ["https://g.co/vulnz","mailto:security@google.com"]
+[http-missing-security-headers:content-security-policy] [http] [info] https://deepseek.com
+[http-missing-security-headers:permissions-policy] [http] [info] https://deepseek.com
+[http-missing-security-headers:x-frame-options] [http] [info] https://deepseek.com
+[http-missing-security-headers:referrer-policy] [http] [info] https://deepseek.com
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] https://deepseek.com
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] https://deepseek.com
+[http-missing-security-headers:strict-transport-security] [http] [info] https://deepseek.com
+[http-missing-security-headers:x-content-type-options] [http] [info] https://deepseek.com
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] https://deepseek.com
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] https://deepseek.com
+[aws-detect:aws-cloudfront] [http] [info] https://deepseek.com
+[aws-detect:aws-waf-captcha] [http] [info] https://deepseek.com
+[aws-cloudfront-service] [http] [info] https://deepseek.com
+[mx-fingerprint] [dns] [info] google.com ["10 smtp.google.com."]
+[mx-fingerprint] [dns] [info] tryhackme.com ["1 aspmx.l.google.com.","10 alt3.aspmx.l.google.com.","10 alt4.aspmx.l.google.com.","5 alt1.aspmx.l.google.com.","5 alt2.aspmx.l.google.com."]
+[mx-service-detector:Google Apps] [dns] [info] tryhackme.com
+[spf-record-detect] [dns] [info] google.com ["v=spf1 include:_spf.google.com ~all""]
+[txt-fingerprint] [dns] [info] google.com [""MS=E4A68B9AB2BB9670BCE15412F62916164C0B20BB"",""globalsign-smime-dv=CDYX+XFHUw2wml6/Gb8+59BsH31KzUr6c1l2BPvqKX8="",""google-site-verification=4ibFUgB-wXLQ_S7vsXVomSTVamuOXBiVAzpR5IZ87D0"",""google-site-verification=TV9-DBe4R80X4v0M4U_bd_J9cpOJM0nikft0jAgjmsQ"",""docusign=05958488-4752-4ef2-95eb-aa7ba8a3bd0e"",""apple-domain-verification=30afIBcvSuDV2PLX"",""docusign=1b0a6754-49b1-4db5-8540-d2c12664b289"",""facebook-domain-verification=22rm551cu4k0ab0bxsw536tlds4h95"",""onetrust-domain-verification=6d685f1d41a94696ad7ef771f68993e0"",""v=spf1 include:_spf.google.com ~all"",""google-site-verification=wD8N7i1JTNTkezJ49swvWW48f8_9xveREV4oB-0Hf5o"",""cisco-ci-domain-verification=47c38bc8c4b74b7233e9053220c1bbe76bcc1cd33c7acf7acd36cd6a5332004b"",""onetrust-domain-verification=0d477fe608074e6f9c12bca7826035cc""]
+[mx-fingerprint] [dns] [info] deepseek.com ["5 hzmx01.mxmail.netease.com.","10 hzmx02.mxmail.netease.com."]
+[spf-record-detect] [dns] [info] tryhackme.com ["v=spf1 include:_spf.google.com include:email.chargebee.com include:7168674.spf05.hubspotemail.net ~all""]
+[txt-fingerprint] [dns] [info] tryhackme.com [""anthropic-domain-verification-azydkj=zpI52q9Mi6RXuR8EflRqMe6q1"",""6ca7e8e9845fa51969caa46c95cf230d"",""zapier-domain-verification-challenge=267a6fd6-7041-48fe-ba4b-02d72fe60413"",""v=spf1 include:_spf.google.com include:email.chargebee.com include:7168674.spf05.hubspotemail.net ~all"",""apple-domain-verification=pCnn4LGO5VSU5XSs"",""google-site-verification=GCyTff0OB7u9Z0DvK942SCYTy1hLYcwWvalZWlRFbCs"",""google-site-verification=AlFrMBXuBQ-zDeey1Qo8m0dRJRUrrNBMnFa4r4aX4gI"",""google-site-verification=umR4x8HuzWMF5g3656JY1b-61NuryD0-GqGnYN13ONo""]
+[caa-fingerprint] [dns] [info] tryhackme.com ["letsencrypt.org","ssl.com","pki.goog; cansignhttpexchanges=yes","digicert.com; cansignhttpexchanges=yes","amazonaws.com","comodoca.com"]
+[spf-record-detect] [dns] [info] deepseek.com ["v=spf1 include:spf.163.com -all""]
+[txt-fingerprint] [dns] [info] deepseek.com [""v=spf1 include:spf.163.com -all""]
+[caa-fingerprint] [dns] [info] google.com ["pki.goog"]
+[dmarc-detect] [dns] [info] _dmarc.tryhackme.com [""v=DMARC1; p=quarantine; pct=5; rua=mailto:3c01de90206f495794daaa800026b08d@dmarc-reports.cloudflare.net""]
+[dkim-record-detect] [dns] [info] google._domainkey.tryhackme.com ["v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxTQIC7vZAHHZ7WVv/5x/qH1RAgMQI+y6Xtsn73rWOgeBQjHKbmIEIlgrebyWWFCXjmzIP0NYJrGehenmPWK5bF/TRDstbM8uVQCUWpoRAHzuhIxPSYW6k/w2+HdCECF2gnGmmw1cT6nHjfCyKGsM0On0HDvxP8I5YQIIlzNigP32n1hVnQP+UuInj0wLIdOBI" "WkHdnFewzGK2+qjF2wmEjx+vqHDnxdUTay5DfTGaqgA9AKjgXNjLEbKlEWvy0tj7UzQRHd24a5+2x/R4Pc7PF/y6OxAwYBZnEPO0sJwio4uqL9CYZcvaHGCLOIMwQmNTPMKGC9nt3PSjujfHUBX3wIDAQAB""]
+[nameserver-fingerprint] [dns] [info] google.com ["ns2.google.com.","ns1.google.com.","ns4.google.com.","ns3.google.com."]
+[caa-fingerprint] [dns] [info] deepseek.com
+[dmarc-detect] [dns] [info] _dmarc.google.com [""v=DMARC1; p=reject; rua=mailto:mailauth-reports@google.com""]
+[nameserver-fingerprint] [dns] [info] deepseek.com ["ns3.dnsv4.com.","ns4.dnsv4.com."]
+[nameserver-fingerprint] [dns] [info] tryhackme.com ["kip.ns.cloudflare.com.","uma.ns.cloudflare.com."]
+[srv-service-detect] [dns] [info] _ldap._tcp.google.com ["SRV\t5 0 389 ldap.google.com."]
+[srv-service-detect] [dns] [info] _ldaps._tcp.google.com ["SRV\t5 0 636 ldap.google.com."]
+[aaaa-fingerprint] [dns] [info] google.com ["2a00:1450:4010:c01::71","2a00:1450:4010:c01::66","2a00:1450:4010:c01::8b","2a00:1450:4010:c01::8a"]
+[dmarc-detect] [dns] [info] _dmarc.deepseek.com [""v=DMARC1; p=quarantine; fo=1; ruf=mailto:dmarc@qiye.163.com; rua=mailto:dmarc_report@qiye.163.com""]
+[srv-service-detect] [dns] [info] _caldav._tcp.google.com ["SRV\t5 0 80 calendar.google.com."]
+[dkim-record-detect] [dns] [info] default._domainkey.deepseek.com ["v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCXmquw5RVduq3UTJ/IpF1JrWhBaIuQZLS8U+4Nl73kztDBJjTjr2JRzAbpVK23qlcGQCPA/JYnrsz3nHlAsheJLVMgxu+AvVirK6RFcTaOUh40QsB6fToY1iNYxByvAoJLAP2wxvlcYD1p6I71QtB/PJvV20yRViMw3jYq1mODkwIDAQAB""]
+[ssl-issuer] [ssl] [info] tryhackme.com:443 ["Let's Encrypt"]
+[ssl-dns-names] [ssl] [info] tryhackme.com:443 ["tryhackme.com"]
+[ssl-issuer] [ssl] [info] google.com:443 ["Google Trust Services"]
+[ssl-dns-names] [ssl] [info] google.com:443 ["*.google.com","*.google.cl","*.google.com.ar","*.g.co","*.google-analytics.com","google.com","*.google.ca","*.google.pt","google-analytics.com","*.googlecommerce.com","urchin.com","*.datacompute.google.com","*.google.co.uk","*.google.com.vn","*.gemini.cloud.google.com","ai.android","android.com","g.co","*.urchin.com","youtube.com","*.music.youtube.com","youtubeeducation.com","*.crowdsource.google.com","*.google.com.br","*.url.google.com","www.goo.gl","*.bdn.dev","*.metric.gstatic.com","goo.gl","*.google.es","*.aistudio.google.com","*.google.com.mx","*.gstatic.com","yt.be","android.clients.google.com","*.appengine.google.com","*.google.nl","*.yt.be","*.cloud.google.com","*.google.com.co","*.ytimg.com","music.youtube.com","*.google.hu","*.google.pl","*.android.com","youtubekids.com","*.origin-test.bdn.dev","*.google.fr","googlecommerce.com","*.google.de","*.youtube-nocookie.com","*.youtube.com","*.youtubeeducation.com","*.google.com.au","*.google.com.tr","*.gvt2.com","*.gcp.gvt2.com","*.flash.android.com","*.google.co.in","*.google.co.jp","*.google.it","*.gvt1.com","*.gcpcdn.gvt1.com","youtu.be","*.youtubekids.com"]
+[wildcard-tls] [ssl] [info] google.com:443 ["CN: *.google.com","SAN: [*.google.com *.appengine.google.com *.bdn.dev *.origin-test.bdn.dev *.cloud.google.com *.crowdsource.google.com *.datacompute.google.com *.google.ca *.google.cl *.google.co.in *.google.co.jp *.google.co.uk *.google.com.ar *.google.com.au *.google.com.br *.google.com.co *.google.com.mx *.google.com.tr *.google.com.vn *.google.de *.google.es *.google.fr *.google.hu *.google.it *.google.nl *.google.pl *.google.pt *.gemini.cloud.google.com *.gstatic.com *.metric.gstatic.com *.gvt1.com *.gcpcdn.gvt1.com *.gvt2.com *.gcp.gvt2.com *.url.google.com *.youtube-nocookie.com *.ytimg.com ai.android android.com *.android.com *.flash.android.com g.co *.g.co goo.gl www.goo.gl google-analytics.com *.google-analytics.com google.com googlecommerce.com *.googlecommerce.com urchin.com *.urchin.com youtu.be youtube.com *.youtube.com music.youtube.com *.music.youtube.com youtubeeducation.com *.youtubeeducation.com youtubekids.com *.youtubekids.com yt.be *.yt.be android.clients.google.com *.aistudio.google.com]"]
+[ssl-issuer] [ssl] [info] deepseek.com:443 ["Amazon"]
+[ssl-dns-names] [ssl] [info] deepseek.com:443 ["deepseek.com"]
