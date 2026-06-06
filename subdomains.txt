@@ -1,4 +1,0 @@
-example.com
-google.com
-tryhackme.com
-deepseek.com
