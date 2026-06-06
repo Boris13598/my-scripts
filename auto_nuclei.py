@@ -6,7 +6,7 @@ def main(subdomains):
 	#Check if subdomains file is here
 	try:
 		with open(subdomains, 'r') as f:
-			subd = [line.strip() for line in f if line.strip()]
+			subd: list[str] = [line.strip() for line in f if line.strip()]
 	except FileNotFoundError:
 		print(f"[-] Error: {subdomains} not found!")
 		sys.exit(1)
@@ -23,7 +23,7 @@ def main(subdomains):
 
 	try:
 		with open('livehosts.txt', 'r') as l:
-			livehosts = [line.strip() for line in l if line.strip()]
+			livehosts: list[str] = [line.strip() for line in l if line.strip()]
 		print(f"[+] Found {len(livehosts)} live hosts")
 	except FileNotFoundError:
 		print(f'[-] No live hosts found!')
