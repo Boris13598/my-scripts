@@ -6,8 +6,8 @@ import sys
 from datetime import datetime
 import argparse
 
-def main(subdomains, severity, threads):
-	timestamp: str = datetime.now().strftime("%Y%m%d_%H%M%S") #Timestamps for files
+def main(subdomains, severity, threads, concurrency):
+	timestamp: str = datetime.now().strftime("%m%d_%H%M%S") #Timestamps for files
 	live_file: str = f"livehosts_{timestamp}.txt"
 	nuclei_file: str = f"nuclei_results_{timestamp}.txt"
 
@@ -49,6 +49,8 @@ def main(subdomains, severity, threads):
 			'-o', nuclei_file]
 		if severity:
 			cmd.extend(['-severity', severity])
+		if concurrency:
+			cmd.extend(['-c', str(concurrency)])
 		result = subprocess.run(
 			cmd, capture_output=True,
 			text=True)
@@ -67,6 +69,7 @@ if __name__ == '__main__':
 				choices=['info', 'medium', 'low', 'high', 'critical'],
 				help="Filter by severity (info, low, medium, high, critical)")
 	parser.add_argument('-t', '--threads', type=str, default='100', help="Number of threads for httpx")
+	parser.add_argument('-c', '--concurrency', type=int, default=50, help="Nuclei control concurrency")
 
 	args = parser.parse_args()
-	main(args.file, args.severity, args.threads)
+	main(args.file, args.severity, args.threads, args.concurrency)
