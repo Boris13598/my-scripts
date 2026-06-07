@@ -1,4 +1,7 @@
+#!/usr/bin/env python3
 '''Simple httpx and nuclei automation tool'''
+from sys import stderr
+from subprocess import check_output
 import subprocess
 import sys
 from datetime import datetime
@@ -19,8 +22,12 @@ def main(subdomains):
 
 	print(f'[*] Running httpx to find live hosts...')
 	try:
-		subprocess.run(
-			['httpx', '-l', subdomains, '-o', live_file, '-silent'])
+		result = subprocess.run(
+			['httpx', '-l', subdomains, '-o', live_file, '-silent'],
+			 capture_output=True)
+		if result.returncode != 0:
+			print(f'[-] Warning: httpx exited with the code {result.returncode}')
+			print(f'[-] Error: {result.stderr.decode()}')
 	except FileNotFoundError:
 		print(f'[-] Error: httpx is not installed or not on PATH')
 		sys.exit(1)
@@ -32,13 +39,16 @@ def main(subdomains):
 		print(f"[+] Found {len(livehosts)} live hosts")
 	except FileNotFoundError:
 		print(f'[-] No live hosts found!')
+		sys.exit(1)
 
 
 	print(f'[*] Running nuclei...')
 	try:
-		subprocess.run(
+		result = subprocess.run(
 			['nuclei', '-l', live_file,
 			'-o', nuclei_file])
+		if result.returncode != 0:
+			print(f'[-] Warning: nuclei exited with code {result.returncode}')
 	except FileNotFoundError:
 		print(f'[-] Error: nuclei not installed or not in PATH')
 		sys.exit(1)
