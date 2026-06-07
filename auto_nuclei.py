@@ -66,7 +66,7 @@ if __name__ == '__main__':
 	parser.add_argument('-s', '--severity', 
 				choices=['info', 'medium', 'low', 'high', 'critical'],
 				help="Filter by severity (info, low, medium, high, critical)")
-	parser.add_argument('-t', '--threads', type=int, default=100, help="Number of threads for httpx")
+	parser.add_argument('-t', '--threads', type=str, default='100', help="Number of threads for httpx")
 
 	args = parser.parse_args()
 	main(args.file, args.severity, args.threads)
