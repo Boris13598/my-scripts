@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
+
 '''Simple httpx and nuclei automation tool'''
-from sys import stderr
-from subprocess import check_output
 import subprocess
 import sys
 from datetime import datetime
+import argparse
 
-def main(subdomains):
+def main(subdomains, severity, threads):
 	timestamp: str = datetime.now().strftime("%Y%m%d_%H%M%S") #Timestamps for files
 	live_file: str = f"livehosts_{timestamp}.txt"
 	nuclei_file: str = f"nuclei_results_{timestamp}.txt"
@@ -20,10 +20,11 @@ def main(subdomains):
 		sys.exit(1)
 	print(f'[+] Loaded {len(subd)} subdomains')
 
-	print(f'[*] Running httpx to find live hosts...')
+	#Run httpx
+	print(f'[*] Running httpx with {threads} threads to find live hosts...')
 	try:
 		result = subprocess.run(
-			['httpx', '-l', subdomains, '-o', live_file, '-silent'],
+			['httpx', '-l', subdomains, '-o', live_file, '-silent', '-threads', threads],
 			 capture_output=True)
 		if result.returncode != 0:
 			print(f'[-] Warning: httpx exited with the code {result.returncode}')
@@ -41,12 +42,16 @@ def main(subdomains):
 		print(f'[-] No live hosts found!')
 		sys.exit(1)
 
-
-	print(f'[*] Running nuclei...')
+	#Run nuclei
+	print(f'[*] Running nuclei with {severity} severity...')
 	try:
+		cmd = ['nuclei', '-l', live_file,
+			'-o', nuclei_file]
+		if severity:
+			cmd.extend(['-severity', severity])
 		result = subprocess.run(
-			['nuclei', '-l', live_file,
-			'-o', nuclei_file])
+			cmd, capture_output=True,
+			text=True)
 		if result.returncode != 0:
 			print(f'[-] Warning: nuclei exited with code {result.returncode}')
 	except FileNotFoundError:
@@ -56,7 +61,12 @@ def main(subdomains):
 	print(f'[+] Done! You can check results in {nuclei_file}')
 
 if __name__ == '__main__':
-	if len(sys.argv) != 2:
-		print(f'Usage: python auto_nuclei.py <your_subdomains_file.txt>')
-		sys.exit(1)
-	main(sys.argv[1])
+	parser = argparse.ArgumentParser(description="My scanning tool")
+	parser.add_argument('file', help="Subdomains file")
+	parser.add_argument('-s', '--severity', 
+				choices=['info', 'medium', 'low', 'high', 'critical'],
+				help="Filter by severity (info, low, medium, high, critical)")
+	parser.add_argument('-t', '--threads', type=int, default=100, help="Number of threads for httpx")
+
+	args = parser.parse_args()
+	main(args.file, args.severity, args.threads)
